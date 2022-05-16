@@ -1,0 +1,57 @@
+{
+  "name": "problem-senators",
+  "version": "0.3.22.2",
+  "private": true,
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^14.1.1",
+    "babel-jest": "^28.0.3",
+    "eslint-config-react-app": "^7.0.1",
+    "jest-environment-jsdom": "^28.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/../__mocks__/styleMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/../__mocks__/fileMock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/node_modules/regenerator-runtime/runtime"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
