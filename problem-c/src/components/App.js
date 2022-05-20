@@ -5,12 +5,31 @@ import TeamSelectForm from './TeamSelectForm';
 function App(props) {
 
   //Your work goes here
+  const [appTeam, setAppTeam] = useState('');
+  const[isCheckedApp, setAppCheck] = useState(false);
 
   //get sorted list of unique teamNames. reduce array of objects into array of strings, 
   //convert to Set to get uniques, spread back into array, and sort 
   const uniqueTeamNames = [...new Set(props.gameData.reduce((all, current) => {
     return all.concat([current.winner, current.runner_up]);
   }, []))].sort();
+
+  let displayedData = props.gameData.filter((element) => {
+    if(appTeam === '') {
+      return true;
+    } else if(element.winner === appTeam) {
+      return true;
+    } else if(isCheckedApp === true) {
+      if(element.runner_up === appTeam) {
+        return true;
+      }
+    }
+  })
+
+  const applyFilter = (teamName, check) => {
+    setAppCheck(check);
+    setAppTeam(teamName);
+  }
 
   return (
     <div className="container">
@@ -19,8 +38,8 @@ function App(props) {
       </header>
     
       <main>
-        <TeamSelectForm teamOptions={uniqueTeamNames} />
-        <GameDataTable data={props.gameData} />
+        <TeamSelectForm applyFilterCallback={applyFilter} teamOptions={uniqueTeamNames} />
+        <GameDataTable data={displayedData} />
       </main>
 
       <footer>

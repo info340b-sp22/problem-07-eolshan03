@@ -1,12 +1,11 @@
-//fix raf warning, redux!
+const raf = require('raf') //fix raf warning, redux!
 
 import React from 'react';
 //updated to use RTL, but still checking internals (doing it badly)
 import { render, screen, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event'
-import '@testing-library/jest-dom' 
-const raf = require('raf')
+import '@testing-library/jest-dom'
 
 // Console errors cause test failures
 console['error'] = (errorMessage) => { 
