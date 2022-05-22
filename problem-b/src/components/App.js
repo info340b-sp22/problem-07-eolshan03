@@ -3,7 +3,7 @@ import { useState } from 'react';
 import _ from 'lodash';
 import { AboutNav } from './Navigation';
 import { BreedNav } from './Navigation';
-import { PetList } from './PetList';
+import PetList  from './PetList';
 
 function App(props) {
   const [pets, setAdopt] = useState(props.pets);
@@ -13,8 +13,7 @@ function App(props) {
         arrayItem.adopted = true;
       }
       setAdopt(petsCopy);
-    })
-}
+    })}
 let reducedObj = _.groupBy(props.pets, 'breed');
 let reducedArr = Object.keys(reducedObj);
   return (

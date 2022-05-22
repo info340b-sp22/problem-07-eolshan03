@@ -19,9 +19,9 @@ export function BreedNav(props) {
     <nav id="breedLinks">
           <h2>Pick a Breed</h2>
           <ul className="list-unstyled">
-        {props.breeds.map((arrayItem) => {
+        {props.breeds.map((arrayItem) => 
         <li key={arrayItem}><a href="">{arrayItem}</a></li>
-    })}
+    )}
     </ul>            
     </nav>
 }

@@ -57,7 +57,7 @@ if(sortByCriteria === "year") {
   //convert data into rows
   const rows = sortedArr.map((match) => {
     return <GameDataRow key={match.year} game={match} />
-  });
+})
 
   return (
     <div className="table-responsive">

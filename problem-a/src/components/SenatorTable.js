@@ -12,11 +12,10 @@ const EXAMPLE_SENATORS = [
 
 export function SenatorTable(props) {
   let headArr = ['Name', 'State', 'Phone', 'Twitter'];
-let inst = <TableHeader columnNames={headArr} />;
-let senatorArr = props.senatorsList.map((index) => {
+let senatorArr = props.senatorsList.map((index) => 
   <SenatorRow senatorData={index} key={index.id} />
-});
-  return <table className="table table-bordered">{inst}
+);
+  return ( <table className="table table-bordered">{<TableHeader columnNames={headArr} />}
   <tbody>{senatorArr}</tbody>
-  </table>
+  </table> )
 }

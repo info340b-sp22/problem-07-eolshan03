@@ -2,18 +2,16 @@ import React from 'react';
 
 
 function PetCard(props) {
+  let displayName = props.petData.name;
   const handleClick = (event) => {
-    props.adoptCallBack(props.petData.name);
+    props.adoptCallBack(displayName);
 }
-  let displayName = "";
-  if(props.adopted == true) {
-    displayName = props.petData.name + " (Adopted)";
-  } else {
-    displayName = props.petData.name;
+  if(props.petData.adopted) {
+    displayName = displayName + " (Adopted)";
   }
   return (
     <div className="card" onClick={handleClick}>
-            <img className="card-img-top" src="img/069b8257-f9db-4034-908f-12b8cea76693.jpg" alt={props.petData.name} />
+            <img className="card-img-top" src={props.petData.img} alt={props.petData.name} />
             <div className="card-body">
             <h3 className="card-title">{displayName}</h3>
               <p className="card-text">{props.petData.sex + " " + props.petData.breed}</p>
@@ -22,9 +20,17 @@ function PetCard(props) {
   )
 }
 
-export function PetList(props) {
-    <h2>Dogs for Adoption</h2>
-    props.pets.map((arrayItem) => {
-        <PetCard adoptCallBack={props.adoptCallback} petData={arrayItem} />
-    })
+function PetList(props) {
+    return (
+      <div>
+      <h2>Dogs for Adoption</h2>
+      <div className="card-deck">
+        {props.pets.map((arrayItem) =>
+        <PetCard adoptCallBack={props.adoptCallBack} petData={arrayItem} />
+    )}
+      </div>
+      </div>
+    )
 }
+
+export default PetList;

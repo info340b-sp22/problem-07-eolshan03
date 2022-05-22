@@ -19,7 +19,7 @@ const handleBtnClick = (event) => {
 
   const optionElems = props.teamOptions.map((teamName) => {
     return <option key={teamName} value={teamName}>{teamName}</option>
-  })
+}) 
 
   return (
     <div className="row align-items-center mb-3">
