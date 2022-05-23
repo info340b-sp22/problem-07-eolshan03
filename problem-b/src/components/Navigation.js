@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function AboutNav() {
+export function AboutNav(props) {
     return (
         <nav id="aboutLinks">
           <h2>About</h2>
@@ -16,12 +16,17 @@ export function AboutNav() {
 }
 
 export function BreedNav(props) {
+  let breedArr = props.breeds.map((arrayItem) => {
+  return (
+  <li key={arrayItem}><a href="">{arrayItem}</a></li>
+  )
+  })
+return (
     <nav id="breedLinks">
           <h2>Pick a Breed</h2>
           <ul className="list-unstyled">
-        {props.breeds.map((arrayItem) => 
-        <li key={arrayItem}><a href="">{arrayItem}</a></li>
-    )}
+        {breedArr}
     </ul>            
     </nav>
+)
 }

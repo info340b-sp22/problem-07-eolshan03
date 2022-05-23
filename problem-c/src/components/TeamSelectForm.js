@@ -6,11 +6,15 @@ export default function TeamSelectForm(props) {
   const [team, setTeam] = useState('');
   const[isChecked, setCheck] = useState(false);
   const handleTeam = (event) => {
-    setTeam(event.target.value);
+    if(event.target.value !== team) {
+      setTeam(event.target.value);
+    }
 }
 
 const handleCheck = (event) => {
-  setCheck(event.target.checked);
+  if(event.target.checked !== isChecked) {
+    setCheck(event.target.checked);
+  }
 }
 
 const handleBtnClick = (event) => {
@@ -24,8 +28,8 @@ const handleBtnClick = (event) => {
   return (
     <div className="row align-items-center mb-3">
       <div className="col-auto">
-        <select onChange={handleTeam} id="teamSelect" className="form-select">
-          <option value={team}>Show all teams</option>
+        <select onChange={handleTeam} value={team} id="teamSelect" className="form-select">
+          <option value="">Show all teams</option>
           {optionElems}
         </select>
       </div>

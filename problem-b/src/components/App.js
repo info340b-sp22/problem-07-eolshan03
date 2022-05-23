@@ -12,8 +12,10 @@ function App(props) {
       if(arrayItem.name === name) {
         arrayItem.adopted = true;
       }
-      setAdopt(petsCopy);
-    })}
+      return arrayItem;
+    })
+    setAdopt(petsCopy);
+  }
 let reducedObj = _.groupBy(props.pets, 'breed');
 let reducedArr = Object.keys(reducedObj);
   return (

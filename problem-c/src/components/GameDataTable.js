@@ -66,19 +66,19 @@ if(sortByCriteria === "year") {
           <tr>
             <th>
               Year
-              <SortButton ascending={ascend1} active={yr} onClick={handleClick} name="year" />
+              <SortButton ascending={ascend1} active={"year" === sortByCriteria} onClick={handleClick} name="year" />
             </th>
             <th className="text-end">
               Winner
-              <SortButton ascending={ascend2} active={win} onClick={handleClick} name="winner" />
+              <SortButton ascending={ascend2} active={"winner" === sortByCriteria} onClick={handleClick} name="winner" />
             </th>
             <th className="text-center">
               Score
-              <SortButton ascending={ascend3} active={score} onClick={handleClick} name="score" />
+              <SortButton ascending={ascend3} active={"score" === sortByCriteria} onClick={handleClick} name="score" />
             </th>
             <th>
               Runner-Up
-              <SortButton ascending={ascend4} active={run} onClick={handleClick} name="runner_up" />
+              <SortButton ascending={ascend4} active={"runner_up" === sortByCriteria} onClick={handleClick} name="runner_up" />
             </th>
           </tr>
         </thead>
